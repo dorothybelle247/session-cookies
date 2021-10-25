@@ -10,13 +10,13 @@ const router = express.Router()
 // @route  GET/
 
 router.get('/', (req, res) => {
-    res.send('Login')
+    res.render('login')
 })
 
 
 // @dashboard
 router.get('/dashboard', (req, res) => {
-    res.send('Dashboard')
+    res.render('dashboard')
 })
 
 module.exports = router

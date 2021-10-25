@@ -1,5 +1,6 @@
 // mongoDB atlas
 
+const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv')
 // request
@@ -25,6 +26,9 @@ if (process.env.NODE_ENV === 'development'){
 // handlebars viewengine
 app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
+
+// static foldder
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/', require('./routes/expressRoute'))
