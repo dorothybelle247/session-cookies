@@ -7,9 +7,12 @@ const dotenv = require('dotenv')
 const morgan = require('morgan')
 // handlebars
 const exphbs = require('express-handlebars')
-
+const passport = require("passport")
 
 const connectDB = require('./config/db.js')
+
+// passport config
+require("./config/passport")(passport)
 
 // load config
 dotenv.config({path: './config/config.env'})
